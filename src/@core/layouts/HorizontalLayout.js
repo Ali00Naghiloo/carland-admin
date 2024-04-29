@@ -137,7 +137,7 @@ const HorizontalLayout = (props) => {
             <ul className="nav navbar-nav">
               <NavItem>
                 <Link to="/" className="navbar-brand">
-                  <h2 className="brand-text mb-0">سیمکارت یار</h2>
+                  <h2 className="brand-text mb-0">کارلند</h2>
                 </Link>
               </NavItem>
             </ul>

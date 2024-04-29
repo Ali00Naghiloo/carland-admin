@@ -58,7 +58,7 @@ const UserDropdown = () => {
                   alt="user avatar"
                 />
               ) : (
-                <img src={logoImage} alt="سیمکارت یار" />
+                <img src={logoImage} alt="کارلند" />
               )}
             </div>
           )}

@@ -1,10 +1,13 @@
 // ** Logo
-import logo from "@src/assets/image/logo_mini.svg";
+import logo from "@src/assets/image/logo.svg";
 
 const SpinnerComponent = () => {
   return (
     <div className="fallback-spinner app-loader">
-      <h1 className="mb-2">سیمکارت یار</h1>
+      <div className="d-flex">
+        <h1 className="mb-2">کارلند</h1>
+        {/* <img src={logo} alt="لوگو کارلند" /> */}
+      </div>
       <div className="loading">
         <div className="effect-1 effects"></div>
         <div className="effect-2 effects"></div>

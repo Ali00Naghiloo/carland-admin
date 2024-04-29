@@ -4,7 +4,7 @@ import { Home } from "react-feather";
 export default [
   {
     id: "dashboards",
-    title: "داشبورد",
+    title: "خانه",
     icon: <Home size={20} />,
     navLink: "/dashboard",
   },

@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="mb-0 d-flex justify-content-between mv_footer">
       <span className="mt-25">
         کپی رایت © {formatHelper.toPersianString(new Date().getFullYear())} شرکت
-        ارتباطی خدمات اول
+        کارلند
       </span>
       <span>نسخه {formatHelper.toPersianString(version.app_version)}</span>
     </div>

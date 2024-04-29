@@ -36,8 +36,8 @@ const Login = () => {
     <div className="auth-wrapper auth-cover">
       <Row className="auth-inner m-0">
         <Link className="brand-logo" to="/" onClick={(e) => e.preventDefault()}>
-          {/* <img src={logoImage} alt="سیمکارت یار" /> */}
-          <h2 className="brand-text text-primary ms-1">سیمکارت یار</h2>
+          {/* <img src={logoImage} alt="کارلند" /> */}
+          <h2 className="brand-text text-primary ms-1">کارلند</h2>
         </Link>
         <Col className="d-none d-lg-flex align-items-center p-5" lg="8" sm="12">
           <div className="w-100 d-lg-flex align-items-center justify-content-center px-5">
@@ -51,11 +51,11 @@ const Login = () => {
         >
           <Col className="px-xl-2 mx-auto rtl" sm="8" md="6" lg="12">
             <CardTitle tag="h2" className="text-bold mb-1 text-center">
-              به سیمکارت یار خوش آمدید! 👋
+              به پنل ادمین کارلند خوش آمدید! 👋
             </CardTitle>
             <CardText className="mb-2 text-center">
-              لطفا برای وارد شدن به حساب کاربری خود شماره موبایل و رمز عبور خود
-              را وارد کنید.
+              لطفا برای وارد شدن به حساب کاربری خود نام کاربری و رمز عبور خود را
+              وارد کنید.
             </CardText>
             {/* get verification code form */}
             <Form
@@ -64,16 +64,16 @@ const Login = () => {
             >
               {/* phoneNumber */}
               <div className="mb-1">
-                <Label className="form-label w-100" for="phoneNumber">
-                  شماره موبایل
+                <Label className="form-label w-100" for="ز">
+                  نام کاربری
                 </Label>
                 <Input
                   disabled={loadings.handleLogin}
                   autoFocus
-                  placeholder="شماره موبایل خود را وارد کنید"
-                  type="tel"
-                  id="phoneNumber"
-                  name="phoneNumber"
+                  placeholder="نام کاربری خود را وارد کنید"
+                  type="text"
+                  id="username"
+                  name="username"
                   style={{ textAlign: "right" }}
                   value={getTokenController.values.phoneNumber}
                   onChange={getTokenController.handleChange}
@@ -124,7 +124,7 @@ const Login = () => {
                 loading={loadings.handleLogin}
                 block
               >
-                دریافت کد تایید
+                ورود
               </CustomButton>
             </Form>
             <div className="w-100 d-flex justify-content-center mt-2">

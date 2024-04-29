@@ -3,8 +3,8 @@
 //Template config options
 const themeConfig = {
   app: {
-    appName: "سیمکارت یار",
-    appLogoImage: require("@src/assets/image/logo.svg").default,
+    appName: "کارلند",
+    appLogoImage: require("@src/assets/image/logo.png").default,
   },
   layout: {
     isRTL: true,

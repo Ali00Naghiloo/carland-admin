@@ -60,7 +60,7 @@ const VerticalMenuHeader = (props) => {
             to={user ? getHomeRouteForLoggedInUser(user.role) : "/"}
             className="navbar-brand"
           >
-            <h2 className="brand-text mb-0">سیمکارت یار</h2>
+            <h2 className="brand-text mb-0">کارلند</h2>
           </NavLink>
         </li>
         <li className="nav-item nav-toggle">

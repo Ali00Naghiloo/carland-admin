@@ -1,7 +1,7 @@
 import { Card, CardImg, Navbar, Button } from "reactstrap";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import logoImage from "../../../assets/image/logo.svg";
+import logoImage from "../../../assets/image/logo.png";
 
 const ProfileHeader = () => {
   const navigate = useNavigate();
