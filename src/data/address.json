@@ -1,0 +1,30 @@
+[
+    {
+        "id": 18,
+        "buildingName": "25",
+        "description": "تست",
+        "floor": "2",
+        "houseNumber": 27,
+        "localityCode": 62512,
+        "localityName": "تهران",
+        "localityType": "شهر",
+        "zipCode": "54543",
+        "province": "تهران",
+        "sideFloor": null,
+        "street": "میرداماد ",
+        "street2": "حصاری",
+        "subLocality": "کوچه نهم ",
+        "townShip": "تهران",
+        "traceId": "123456789",
+        "village": "",
+        "userAppsId": 26,
+        "createDate": "2023-12-29T17:45:05.2816397",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    }
+]

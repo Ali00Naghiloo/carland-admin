@@ -1,0 +1,28 @@
+[
+    {
+        "id": 2,
+        "name": "تست ۱",
+        "isActive": true,
+        "createDate": "2023-12-28T14:19:36.104781",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    },
+    {
+        "id": 1,
+        "name": "Agent",
+        "isActive": true,
+        "createDate": "2023-12-27T19:02:03.7854585",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    }
+]

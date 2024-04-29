@@ -1,0 +1,34 @@
+[
+    {
+        "id": 2,
+        "satrtTime": "08:00",
+        "endTime": "14:00",
+        "description": "TEST 1",
+        "monthnumber": 1,
+        "isActive": true,
+        "createDate": "2024-01-08T09:44:25.7011501",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    },
+    {
+        "id": 1,
+        "satrtTime": "string",
+        "endTime": "string",
+        "description": "string",
+        "monthnumber": 0,
+        "isActive": true,
+        "createDate": "2024-01-07T10:42:37.4053429",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    }
+]

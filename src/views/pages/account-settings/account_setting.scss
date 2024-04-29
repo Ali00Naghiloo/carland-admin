@@ -1,0 +1,90 @@
+.profile_edit_banner_upload_card > label {
+  width: 100%;
+  max-width: unset !important;
+}
+
+.profile_edit_banner_upload {
+  width: 100% !important;
+  height: 300px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.profile_edit_banner_uploaded {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.profile_edit_banner_uploaded > div {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s;
+  background: rgba(0, 0, 0, 0.15);
+}
+.profile_edit_banner_uploaded > div:hover {
+  opacity: 1;
+}
+.profile_edit_banner_uploaded > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile_edit_banner_upload > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.profile_edit_banner_upload > div:nth-child(1) > svg {
+  font-size: 50px !important;
+}
+.profile_edit_banner_upload > div:nth-child(1) > span {
+  margin-top: 8px;
+  font-size: 18px;
+}
+.profile_edit_banner_upload > div:nth-child(2) {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+.profile_edit_banner_upload > div:nth-child(2) > div {
+  padding: 4px 8px;
+  margin: 0 8px;
+  border-radius: 8px;
+  background: rgba(226, 226, 226, 0.366);
+}
+// finance tab
+.account_finance_shaba_field > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.account_finance_shaba_field > div > span {
+  position: absolute;
+  right: 8px;
+  font-size: 12px;
+  top: 12px;
+}
+.form_error {
+  transition: border 0.2s;
+  border: 0.5px solid red !important;
+  border-radius: 4px !important;
+}
+@media only screen and (max-width: 430px) {
+  .profile_edit_banner_upload > div:nth-child(1) > span {
+    font-size: 14px;
+  }
+}

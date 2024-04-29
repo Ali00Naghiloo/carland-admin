@@ -1,0 +1,36 @@
+.number_inputs_component {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.number_inputs_component > button {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+.number_inputs_component > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.number_inputs_component > div > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(201, 201, 201, 0.5);
+}
+.number_inputs_component > div > div > div:nth-child(1) {
+  margin-right: 12px;
+}
+.number_inputs_component > div > div > div:last-child {
+  cursor: pointer;
+  margin-left: auto;
+}
+.number_inputs_component > div > div:last-child {
+  margin: 0 !important;
+}

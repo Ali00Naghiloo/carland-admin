@@ -1,0 +1,29 @@
+@import "../../bootstrap-extended/include"; // Bootstrap includes
+@import "../../components/include"; // Components includes
+
+$header-padding-y: 1.5rem;
+$header-padding-x: 1.5rem;
+$content-padding-x: 1.5rem;
+$content-padding-y: 1.5rem;
+$trigger-padding-vertical: 1rem;
+$step-box-height: 38px;
+$step-box-width: 38px;
+
+.horizontal-wizard,
+.vertical-wizard,
+.modern-horizontal-wizard,
+.modern-vertical-wizard {
+  margin-bottom: 2.2rem;
+}
+
+// RTl
+html[data-textdirection="rtl"] {
+  .btn-prev,
+  .btn-next {
+    display: flex;
+    i,
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+}

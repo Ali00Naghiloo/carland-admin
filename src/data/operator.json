@@ -1,0 +1,27 @@
+[
+    {
+        "id": 2,
+        "name": "HamrahAval",
+        "active": true
+    },
+    {
+        "id": 3,
+        "name": "string",
+        "active": true
+    },
+    {
+        "id": 4,
+        "name": "ایرانسل",
+        "active": true
+    },
+    {
+        "id": 5,
+        "name": "ایر",
+        "active": true
+    },
+    {
+        "id": 6,
+        "name": "ایرانسل ۲",
+        "active": false
+    }
+]

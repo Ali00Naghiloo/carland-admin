@@ -1,0 +1,29 @@
+.pincode-input-container {
+  width: 100%;
+  display: flex !important;
+  justify-content: space-between;
+}
+.pincode-input-container > input {
+  width: 45px !important;
+  height: 45px !important;
+  text-align: center !important;
+  border-radius: 8px !important;
+  font-size: 22px !important;
+  transition: border 0.07s;
+  color: #0a83cf;
+  background: transparent !important;
+  border: 1px solid #0a83cf;
+}
+.pincode-input-container > input[value=""] {
+  background: transparent !important;
+  color: #0a83cf !important;
+}
+.pincode-input-container > input[disabled] {
+  background: rgba(223, 223, 223, 0.201) !important;
+  border: 1px solid rgb(223, 223, 223);
+  color: black !important;
+}
+.pincode-input-container > input:focus {
+  border: 1.5px solid #0a83cf !important;
+  outline: none !important;
+}

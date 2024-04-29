@@ -1,0 +1,77 @@
+.custom_datepicker_wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 99 !important;
+}
+.custom_datepicker_wrapper > svg {
+  position: absolute;
+  right: 8px !important;
+  z-index: 9999;
+}
+.custom_datepicker_wrapper > div {
+  width: 100%;
+}
+.DatePicker__calendarContainer {
+  z-index: 9999 !important;
+}
+
+.responsive-calendar {
+  font-size: 7px !important;
+  z-index: 9999 !important;
+}
+.custom_datepicker {
+  margin-top: 2px;
+  width: 100% !important;
+  min-height: 38px !important;
+  border-radius: 4px;
+  font-size: 13px !important;
+  border: 1px solid #d8d6de;
+  text-align: left;
+  transition: border 0.2s;
+  z-index: 0;
+}
+.custom_datepicker_dark {
+  margin-top: 2px;
+  width: 100% !important;
+  min-height: 38px !important;
+  border-radius: 4px;
+  font-size: 13px !important;
+  border: 1px solid #3b4253;
+  text-align: left;
+  background: transparent !important;
+  transition: border 0.2s;
+  z-index: 0;
+  color: #b4b7bd !important;
+}
+.custom_datepicker_dark:focus,
+.custom_datepicker:focus {
+  outline: none !important;
+  border: 1px solid #0a83cf !important;
+}
+
+@media (max-width: 1500px) {
+  .responsive-calendar {
+    font-size: 7px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .responsive-calendar {
+    font-size: 7px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-calendar {
+    font-size: 6px !important;
+  }
+}
+
+/* Large screens */
+@media (min-width: 2500px) {
+  .responsive-calendar {
+    font-size: 10px !important;
+  }
+}

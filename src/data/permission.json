@@ -1,0 +1,34 @@
+[
+    {
+        "id": 5,
+        "roleId": "1",
+        "role": null,
+        "controllerName": "Adress",
+        "actionName": "delete Address",
+        "isActive": false,
+        "createDate": null,
+        "updateDate": "2024-01-19T11:31:55.6510958",
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    },
+    {
+        "id": 6,
+        "roleId": "1",
+        "role": null,
+        "controllerName": "Adress",
+        "actionName": "Add Address",
+        "isActive": true,
+        "createDate": null,
+        "updateDate": "2024-01-19T11:31:55.4723799",
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    }
+]

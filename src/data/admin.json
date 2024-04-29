@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "phoneNumber": "09122205836",
+        "roleId": 1,
+        "roleName": "نماینده",
+        "email": "tak1.ghasemi@gmail.com",
+        "family": "خدابنده",
+        "name": "محسن",
+        "isActive": true,
+        "avatar": null,
+        "createDate": null,
+        "updateDate": "2024-01-30T14:44:09.1848819",
+        "userId": 0,
+        "userName": null
+    },
+    {
+        "id": 2,
+        "phoneNumber": "09390624049",
+        "roleId": null,
+        "roleName": null,
+        "email": "vakili@GMAIL.COM",
+        "family": "وکیلی دوست",
+        "name": "محمد علی",
+        "isActive": true,
+        "avatar": null,
+        "createDate": null,
+        "updateDate": null,
+        "userId": null,
+        "userName": null
+    },
+    {
+        "id": 7,
+        "phoneNumber": "09910650929",
+        "roleId": 7,
+        "roleName": "ادمین",
+        "email": "mohammad6vakili@gmail.com",
+        "family": "وکیلی دوست ۲",
+        "name": "محمدعلی",
+        "isActive": true,
+        "avatar": "/images/7e6763ad-32b4-4508-890b-7a02eec57320.jpg",
+        "createDate": "2024-01-28T15:52:21.0420371",
+        "updateDate": null,
+        "userId": 0,
+        "userName": null
+    }
+]

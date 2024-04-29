@@ -1,0 +1,62 @@
+[
+    {
+        "id": 5,
+        "nationalityName": null,
+        "createDate": "2023-12-28T12:37:20.9103476",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    },
+    {
+        "id": 4,
+        "nationalityName": null,
+        "createDate": "2023-12-28T12:37:00.3552704",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    },
+    {
+        "id": 3,
+        "nationalityName": null,
+        "createDate": "2023-12-28T12:36:49.1252243",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    },
+    {
+        "id": 2,
+        "nationalityName": null,
+        "createDate": "2023-12-28T12:30:52.836385",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    },
+    {
+        "id": 1,
+        "nationalityName": null,
+        "createDate": "2023-12-27T19:03:10.172408",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    }
+]

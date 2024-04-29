@@ -1,0 +1,64 @@
+[
+    {
+        "id": 3,
+        "citiesId": 705,
+        "cities": {
+            "id": 705,
+            "name": "محمدیه",
+            "slug": "محمدیه",
+            "provinceid": 18,
+            "province": {
+                "id": 18,
+                "name": "قزوین",
+                "slug": "قزوین"
+            }
+        },
+        "provincesId": 18,
+        "provinces": {
+            "id": 18,
+            "name": "قزوین",
+            "slug": "قزوین"
+        },
+        "price": 12000,
+        "is_active": true,
+        "createDate": "2024-01-08T15:29:18.0920077",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    },
+    {
+        "id": 1,
+        "citiesId": 301,
+        "cities": {
+            "id": 301,
+            "name": "تهران",
+            "slug": "تهران",
+            "provinceid": 8,
+            "province": {
+                "id": 8,
+                "name": "تهران",
+                "slug": "تهران"
+            }
+        },
+        "provincesId": 8,
+        "provinces": {
+            "id": 8,
+            "name": "تهران",
+            "slug": "تهران"
+        },
+        "price": 15000,
+        "is_active": true,
+        "createDate": "2024-01-06T17:23:02.989589",
+        "updateDate": null,
+        "createDateEndSearch": null,
+        "updateDateEndSearch": null,
+        "userId": 0,
+        "userName": null,
+        "userIdUpdate": null,
+        "userNameUpdate": null
+    }
+]
