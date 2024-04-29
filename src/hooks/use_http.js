@@ -4,9 +4,11 @@ import formatHelper from "../helper/format_helper";
 
 const useHttp = () => {
   var token = localStorage.getItem("token");
+  const baseURL = "https://api.carland.ir/api/";
 
   const httpService = axios.create({
-    baseURL: process.env.REACT_APP_BASE_URL,
+    // baseURL: process.env.REACT_APP_BASE_URL,
+    baseURL: baseURL,
     headers: {
       Authorization: token ? `Bearer ${token}` : "",
       Accept: "application/json",
@@ -21,6 +23,8 @@ const useHttp = () => {
         localStorage.removeItem("token");
         window.location.replace("/");
         toast.error("شما از برنامه خارج شده اید");
+      } else if (response?.status === 403) {
+        toast.error("شما به این بخش دسترسی ندارید");
       } else if (response?.data?.message) {
         toast.error(formatHelper.toPersianString(response?.data?.message));
       } else {

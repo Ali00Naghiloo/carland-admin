@@ -1,7 +1,7 @@
 import * as yup from "yup";
 
 export const getTokenSchema = yup.object({
-  phoneNumber: yup.string().required("فیلد شماره موبایل اجباری است."),
+  username: yup.string().required("فیلد نام کاربری اجباری است."),
   password: yup.string().required("فیلد رمز عبور اجباری است."),
 });
 

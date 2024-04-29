@@ -62,7 +62,7 @@ const Login = () => {
               className="auth-login-form mt-2"
               onSubmit={getTokenController.handleSubmit}
             >
-              {/* phoneNumber */}
+              {/* username */}
               <div className="mb-1">
                 <Label className="form-label w-100" for="ز">
                   نام کاربری
@@ -75,21 +75,22 @@ const Login = () => {
                   id="username"
                   name="username"
                   style={{ textAlign: "right" }}
-                  value={getTokenController.values.phoneNumber}
+                  value={getTokenController.values.username}
                   onChange={getTokenController.handleChange}
                   invalid={
-                    getTokenController.touched.phoneNumber
-                      ? getTokenController.errors.phoneNumber
+                    getTokenController.touched.username
+                      ? getTokenController.errors.username
                       : null
                   }
                 />
-                {getTokenController.touched.phoneNumber &&
-                getTokenController.errors.phoneNumber ? (
+                {getTokenController.touched.username &&
+                getTokenController.errors.username ? (
                   <FormFeedback>
-                    {getTokenController.errors.phoneNumber}
+                    {getTokenController.errors.username}
                   </FormFeedback>
                 ) : null}
               </div>
+
               {/* password */}
               <div className="mb-1">
                 <div className="d-flex justify-content-between">
@@ -117,6 +118,7 @@ const Login = () => {
                   </FormFeedback>
                 ) : null}
               </div>
+
               <CustomButton
                 type="submit"
                 className="mt-2"

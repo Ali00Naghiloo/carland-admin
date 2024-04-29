@@ -186,7 +186,7 @@ const useUsers = () => {
     }
     try {
       setLoadings({ ...loadings, getUsers: true });
-      const response = await httpService.get("/GetAllUsers", {
+      const response = await httpService.get("admin/users", {
         params: paramsData,
       });
       setLoadings({ ...loadings, getUsers: false });
@@ -205,7 +205,7 @@ const useUsers = () => {
   const getUserById = async (user_id) => {
     try {
       setGetByIdLoading(true);
-      const response = await httpService.get("GetAllUsers", {
+      const response = await httpService.get("admin/users", {
         params: {
           id: user_id,
         },
@@ -226,7 +226,7 @@ const useUsers = () => {
     let dataArray = [];
     try {
       setGetRolesLoading(true);
-      const response = await httpService.get("/GetAllRole");
+      const response = await httpService.get("/admin/users");
       setGetRolesLoading(false);
       if (response.data.data) {
         response.data.data.map((dataItem) => {

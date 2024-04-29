@@ -18,7 +18,7 @@ const useAuth = () => {
 
   const getTokenController = useFormik({
     initialValues: {
-      phoneNumber: "",
+      username: "",
       password: "",
     },
     validationSchema: getTokenSchema,
@@ -31,10 +31,10 @@ const useAuth = () => {
   const handleLogin = async (values) => {
     try {
       setLoadings({ ...loadings, handleLogin: true });
-      const response = await httpService.post("/Auth/Login/login", {
-        phoneNumber: formatHelper.toEnglishString(values.phoneNumber),
-        password: values.password,
-      });
+      const data = new FormData();
+      data.append("username", values.username);
+      data.append("password", values.password);
+      const response = await httpService.post("AdminLogin", data);
       setLoadings({ ...loadings, handleLogin: false });
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
@@ -62,7 +62,8 @@ const useAuth = () => {
         }
       );
       setLoadings({ ...loadings, handleLogout: false });
-      if (response.status === 200) {
+      // if (response.status === 200) {
+      if (true) {
         localStorage.removeItem("token");
         toast.success("شما با موفقیت از برنامه خارج شدید.");
         setTimeout(() => {
