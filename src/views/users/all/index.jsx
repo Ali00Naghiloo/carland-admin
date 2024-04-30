@@ -152,6 +152,7 @@ const AllUsers = () => {
         title="کاربران"
         data={[{ title: "داشبورد" }, { title: "کاربران" }]}
       />
+
       {/* filterbar */}
       <Filterbar
         filters={filters}
@@ -160,6 +161,7 @@ const AllUsers = () => {
         getNationalityLoading={getNationalityLoading}
         nationalityData={nationalityData}
       />
+
       {/* tabs */}
       <Nav pills className="mb-2">
         <NavItem>
@@ -204,8 +206,10 @@ const AllUsers = () => {
               </NavItem>
             ))}
       </Nav>
+
       {/* loading */}
       {loadings.getUsers ? <CustomLoading /> : null}
+
       {/* datatable */}
       {!loadings.getUsers && (
         <>
@@ -233,6 +237,7 @@ const AllUsers = () => {
           <CustomPagination />
         </>
       )}
+
       {/* empty view */}
       {!loadings.getUsers && usersList.length === 0 ? (
         <Card>
@@ -241,6 +246,7 @@ const AllUsers = () => {
           </CardBody>
         </Card>
       ) : null}
+
       {/* delete modal */}
       <Confirm
         visible={deleteModal}

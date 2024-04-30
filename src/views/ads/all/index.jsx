@@ -22,7 +22,7 @@ import Filterbar from "./components/filterbar";
 import { useReactToPrint } from "react-to-print";
 import CustomButton from "../../../components/button";
 
-const AllOffer = () => {
+const AllAds = () => {
   const dispatch = useDispatch();
   const { skin } = useSkin();
   const datatableRef = useRef();
@@ -198,4 +198,4 @@ const AllOffer = () => {
   );
 };
 
-export default AllOffer;
+export default AllAds;

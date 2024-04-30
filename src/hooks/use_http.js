@@ -2,9 +2,11 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import formatHelper from "../helper/format_helper";
 
+export const baseURL = "https://api.carland.ir/api/";
+export const imageUrl = "https://api.carland.ir";
+
 const useHttp = () => {
   var token = localStorage.getItem("token");
-  const baseURL = "https://api.carland.ir/api/";
 
   const httpService = axios.create({
     // baseURL: process.env.REACT_APP_BASE_URL,

@@ -1,9 +1,6 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Breadcrumbs from "@components/breadcrumbs";
 import useOffer from "../../../hooks/use_offer";
-import CustomLoading from "../../../components/loading";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import moment from "jalali-moment";
 import {
   Col,
   Form,
@@ -20,103 +17,36 @@ import {
 } from "reactstrap";
 import Select from "react-select";
 import { selectThemeColors } from "@utils";
+import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import CustomButton from "../../../components/button";
 import CustomDatePicker from "../../../components/datepicker";
 
-const UpdateOffer = () => {
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+const CreateAd = () => {
   const {
-    getOfferById,
     getOperators,
-    updateOfferController,
-    viewOfferData,
+    createOfferController,
     operatorsList,
     loadings,
-    getByIdLoading,
     getOperatorsLoading,
   } = useOffer();
 
   useEffect(() => {
-    let entity_id = searchParams.get("entity_id");
-    if (entity_id) {
-      getOfferById(entity_id);
-      updateOfferController.setFieldValue("offer_id", entity_id);
-    } else {
-      navigate("/offer/all");
-    }
+    getOperators();
   }, []);
-
-  useEffect(() => {
-    if (viewOfferData) {
-      updateOfferController.setFieldValue(
-        "offerName",
-        viewOfferData?.offerName
-      );
-      updateOfferController.setFieldValue(
-        "offerCode",
-        viewOfferData?.offerCode
-      );
-      if (viewOfferData?.price) {
-        updateOfferController.setFieldValue("offerValue", viewOfferData?.price);
-        updateOfferController.setFieldValue("type", 0);
-      } else if (viewOfferData?.percent) {
-        updateOfferController.setFieldValue(
-          "offerValue",
-          viewOfferData?.percent
-        );
-        updateOfferController.setFieldValue("type", 1);
-      }
-      if (viewOfferData?.operator) {
-        updateOfferController.setFieldValue("operatorId", {
-          label: viewOfferData?.operator?.name,
-          value: viewOfferData?.operator?.id,
-        });
-      }
-      if (viewOfferData?.startDate) {
-        updateOfferController.setFieldValue("startDate", {
-          year: parseFloat(
-            moment(viewOfferData?.startDate).locale("fa").format("YYYY")
-          ),
-          month: parseFloat(
-            moment(viewOfferData?.startDate).locale("fa").format("MM")
-          ),
-          day: parseFloat(
-            moment(viewOfferData?.startDate).locale("fa").format("DD")
-          ),
-        });
-      }
-      if (viewOfferData?.endDate) {
-        updateOfferController.setFieldValue("endDate", {
-          year: parseFloat(
-            moment(viewOfferData?.endDate).locale("fa").format("YYYY")
-          ),
-          month: parseFloat(
-            moment(viewOfferData?.endDate).locale("fa").format("MM")
-          ),
-          day: parseFloat(
-            moment(viewOfferData?.endDate).locale("fa").format("DD")
-          ),
-        });
-      }
-    }
-  }, [viewOfferData]);
 
   return (
     <Fragment>
       {/* breadcrumb */}
       <Breadcrumbs
-        title="ویرایش تخفیف"
-        data={[{ title: "داشبورد" }, { title: "ویرایش تخفیف" }]}
+        title="ایجاد تخفیف جدید"
+        data={[{ title: "داشبورد" }, { title: "ایجاد تخفیف جدید" }]}
       />
-      {/* loading */}
-      {getByIdLoading ? <CustomLoading /> : null}
-      <Form onSubmit={updateOfferController.handleSubmit}>
+      <Form onSubmit={createOfferController.handleSubmit}>
         <Card className="w-100 card">
           {/* card header */}
           <CardHeader className="border-bottom">
-            <CardTitle>فرم ویرایش تخفیف</CardTitle>
+            <CardTitle>فرم ایجاد تخفیف جدید</CardTitle>
           </CardHeader>
           {/* form fields */}
           <CardBody className="pt-2">
@@ -127,23 +57,23 @@ const UpdateOffer = () => {
                   نام تخفیف
                 </Label>
                 <Input
-                  value={updateOfferController.values.offerName}
-                  onChange={updateOfferController.handleChange}
+                  value={createOfferController.values.offerName}
+                  onChange={createOfferController.handleChange}
                   autoFocus={true}
                   type="text"
                   id="offerName"
                   name="offerName"
                   placeholder="نام تخفیف را وارد کنید"
                   invalid={
-                    updateOfferController.touched.offerName
-                      ? updateOfferController.errors.offerName
+                    createOfferController.touched.offerName
+                      ? createOfferController.errors.offerName
                       : null
                   }
                 />
-                {updateOfferController.touched.offerName &&
-                updateOfferController.errors.offerName ? (
+                {createOfferController.touched.offerName &&
+                createOfferController.errors.offerName ? (
                   <FormFeedback>
-                    {updateOfferController.errors.offerName}
+                    {createOfferController.errors.offerName}
                   </FormFeedback>
                 ) : null}
               </Col>
@@ -153,22 +83,22 @@ const UpdateOffer = () => {
                   کد تخفیف
                 </Label>
                 <Input
-                  value={updateOfferController.values.offerCode}
-                  onChange={updateOfferController.handleChange}
+                  value={createOfferController.values.offerCode}
+                  onChange={createOfferController.handleChange}
                   type="text"
                   id="offerCode"
                   name="offerCode"
                   placeholder="کد تخفیف را وارد کنید"
                   invalid={
-                    updateOfferController.touched.offerCode
-                      ? updateOfferController.errors.offerCode
+                    createOfferController.touched.offerCode
+                      ? createOfferController.errors.offerCode
                       : null
                   }
                 />
-                {updateOfferController.touched.offerCode &&
-                updateOfferController.errors.offerCode ? (
+                {createOfferController.touched.offerCode &&
+                createOfferController.errors.offerCode ? (
                   <FormFeedback>
-                    {updateOfferController.errors.offerCode}
+                    {createOfferController.errors.offerCode}
                   </FormFeedback>
                 ) : null}
               </Col>
@@ -176,38 +106,38 @@ const UpdateOffer = () => {
               <Col xs="12" sm="6" md="4" className="mb-1">
                 <Label className="form-label" for="offerName">
                   مقدار تخفیف (
-                  {updateOfferController.values.type === 0 ? "مبلغ" : "درصد"})
+                  {createOfferController.values.type === 0 ? "مبلغ" : "درصد"})
                 </Label>
                 <div className="position-relative d-flex align-items-center">
                   <Input
-                    value={updateOfferController.values.offerValue}
+                    value={createOfferController.values.offerValue}
                     onChange={(e) => {
-                      if (updateOfferController.values.type === 1) {
+                      if (createOfferController.values.type === 1) {
                         if (e.target.value.length > 2) {
                           toast.error("حداکثر درصد تخفیف ۹۹ درصد است.");
                         } else {
-                          updateOfferController.setFieldValue(
+                          createOfferController.setFieldValue(
                             "offerValue",
                             e.target.value
                           );
                         }
                       } else {
-                        updateOfferController.setFieldValue(
+                        createOfferController.setFieldValue(
                           "offerValue",
                           e.target.value
                         );
                       }
                     }}
                     type="number"
-                    max={updateOfferController.values.type === 1 ? 100 : null}
+                    max={createOfferController.values.type === 1 ? 100 : null}
                     id="offerValue"
                     name="offerValue"
                     placeholder={`${
-                      updateOfferController.values.type === 0 ? "مبلغ" : "درصد"
+                      createOfferController.values.type === 0 ? "مبلغ" : "درصد"
                     } تخفیف را وارد کنید`}
                     invalid={
-                      updateOfferController.touched.offerValue
-                        ? updateOfferController.errors.offerValue
+                      createOfferController.touched.offerValue
+                        ? createOfferController.errors.offerValue
                         : null
                     }
                   />
@@ -215,23 +145,23 @@ const UpdateOffer = () => {
                     style={{ position: "absolute", left: 32 }}
                     size="sm"
                     onClick={() => {
-                      updateOfferController.setFieldValue("offerValue", "");
-                      if (updateOfferController.values.type === 0) {
-                        updateOfferController.setFieldValue("type", 1);
+                      createOfferController.setFieldValue("offerValue", "");
+                      if (createOfferController.values.type === 0) {
+                        createOfferController.setFieldValue("type", 1);
                       } else {
-                        updateOfferController.setFieldValue("type", 0);
+                        createOfferController.setFieldValue("type", 0);
                       }
                     }}
                   >
-                    {updateOfferController.values.type === 0
+                    {createOfferController.values.type === 0
                       ? "به درصد"
                       : "به مبلغ"}
                   </Button>
                 </div>
-                {updateOfferController.touched.offerValue &&
-                updateOfferController.errors.offerValue ? (
+                {createOfferController.touched.offerValue &&
+                createOfferController.errors.offerValue ? (
                   <FormFeedback style={{ display: "block" }}>
-                    {updateOfferController.errors.offerValue}
+                    {createOfferController.errors.offerValue}
                   </FormFeedback>
                 ) : null}
               </Col>
@@ -241,22 +171,22 @@ const UpdateOffer = () => {
                   تاریخ شروع
                 </Label>
                 <CustomDatePicker
-                  maximumDate={updateOfferController.values.endDate}
+                  maximumDate={createOfferController.values.endDate}
                   inputName="startDate"
                   inputClassName={
-                    updateOfferController.touched.startDate &&
-                    updateOfferController.errors.startDate
+                    createOfferController.touched.startDate &&
+                    createOfferController.errors.startDate
                       ? "form_error"
                       : ""
                   }
-                  value={updateOfferController.values.startDate}
+                  value={createOfferController.values.startDate}
                   onChange={(value) => {
-                    updateOfferController.setFieldValue("startDate", value);
+                    createOfferController.setFieldValue("startDate", value);
                   }}
                   inputPlaceholder="انتخاب تاریخ"
                 />
-                {updateOfferController.touched.startDate &&
-                updateOfferController.errors.startDate ? (
+                {createOfferController.touched.startDate &&
+                createOfferController.errors.startDate ? (
                   <FormFeedback style={{ display: "block" }}>
                     فیلد تاریخ شروع اجباری است.
                   </FormFeedback>
@@ -268,36 +198,37 @@ const UpdateOffer = () => {
                   تاریخ پایان
                 </Label>
                 <CustomDatePicker
-                  minimumDate={updateOfferController.values.startDate}
+                  minimumDate={createOfferController.values.startDate}
                   inputName="endDate"
                   inputClassName={
-                    updateOfferController.touched.endDate &&
-                    updateOfferController.errors.endDate
+                    createOfferController.touched.endDate &&
+                    createOfferController.errors.endDate
                       ? "form_error"
                       : ""
                   }
-                  value={updateOfferController.values.endDate}
+                  value={createOfferController.values.endDate}
                   onChange={(value) => {
-                    updateOfferController.setFieldValue("endDate", value);
+                    createOfferController.setFieldValue("endDate", value);
                   }}
                   inputPlaceholder="انتخاب تاریخ"
                 />
-                {updateOfferController.touched.endDate &&
-                updateOfferController.errors.endDate ? (
+                {createOfferController.touched.endDate &&
+                createOfferController.errors.endDate ? (
                   <FormFeedback style={{ display: "block" }}>
                     فیلد تاریخ پایان اجباری است.
                   </FormFeedback>
                 ) : null}
               </Col>
+
               {/* operatorId */}
               <Col xs="12" sm="6" md="4" className="mb-1">
                 <Label className="form-label" for="operatorId">
                   اپراتور
                 </Label>
                 <Select
-                  value={updateOfferController.values.operatorId}
+                  value={createOfferController.values.operatorId}
                   onChange={(value) =>
-                    updateOfferController.setFieldValue("operatorId", value)
+                    createOfferController.setFieldValue("operatorId", value)
                   }
                   isLoading={getOperatorsLoading}
                   noOptionsMessage={() => " اپراتوری یافت نشد."}
@@ -307,8 +238,8 @@ const UpdateOffer = () => {
                   placeholder="اپراتور را انتخاب کنید"
                   options={operatorsList}
                   className={`react-select ${
-                    updateOfferController.touched.operatorId &&
-                    updateOfferController.errors.operatorId
+                    createOfferController.touched.operatorId &&
+                    createOfferController.errors.operatorId
                       ? "form_error"
                       : ""
                   }`}
@@ -316,8 +247,8 @@ const UpdateOffer = () => {
                   id="operatorId"
                   name="operatorId"
                 />
-                {updateOfferController.touched.operatorId &&
-                updateOfferController.errors.operatorId ? (
+                {createOfferController.touched.operatorId &&
+                createOfferController.errors.operatorId ? (
                   <FormFeedback style={{ display: "block" }}>
                     فیلد اپراتور اجباری است.
                   </FormFeedback>
@@ -329,7 +260,7 @@ const UpdateOffer = () => {
           <CardFooter className="border-top d-flex justify-content-center">
             {/* submit button */}
             <CustomButton
-              loading={loadings.updateOffer}
+              loading={loadings.createOffer}
               type="submit"
               color="primary"
               style={{ minWidth: 150 }}
@@ -343,4 +274,4 @@ const UpdateOffer = () => {
   );
 };
 
-export default UpdateOffer;
+export default CreateAd;

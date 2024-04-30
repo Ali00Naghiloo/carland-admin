@@ -27,7 +27,7 @@ import PrivateRoute from "@components/routes/PrivateRoute";
 import { isObjEmpty } from "@utils";
 import ModemPackageRoutes from "./modem_package";
 import GradeRoutes from "./grade";
-import OfferRoutes from "./offer";
+import AdsRoutes from "./ads";
 import NumberTypeRoutes from "./number_type";
 import PlanRoutes from "./plan";
 import NationalityRoutes from "./nationality";
@@ -71,7 +71,7 @@ const Routes = [
   ...NumberLabelRoutes,
   ...PlanRoutes,
   ...SourceNumberRoutes,
-  ...OfferRoutes,
+  ...AdsRoutes,
   ...ModemPackageRoutes,
   ...GradeRoutes,
   ...NationalityRoutes,

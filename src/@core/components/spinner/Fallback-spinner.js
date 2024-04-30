@@ -1,5 +1,5 @@
 // ** Logo
-import logo from "@src/assets/image/logo.svg";
+import logo from "@src/assets/image/logo.png";
 
 const SpinnerComponent = () => {
   return (

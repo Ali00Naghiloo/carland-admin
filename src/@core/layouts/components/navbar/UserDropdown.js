@@ -11,7 +11,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 import { AiOutlineSetting } from "react-icons/all";
-import logoImage from "../../../../assets/image/logo_mini.svg";
+import logoImage from "../../../../assets/image/logo.png";
 import Skeleton from "../../../../components/skeleton";
 import Confirm from "../../../../components/confirm";
 
@@ -50,7 +50,7 @@ const UserDropdown = () => {
           {getUserDataLoading ? (
             <Skeleton style={{ width: 40, height: 40, borderRadius: "50%" }} />
           ) : (
-            <div className="navbar_user_avatar">
+            <div style={{ height: "50px" }}>
               {userData?.profile_url ? (
                 <img
                   style={{ objectFit: "cover" }}
@@ -58,7 +58,12 @@ const UserDropdown = () => {
                   alt="user avatar"
                 />
               ) : (
-                <img src={logoImage} alt="کارلند" />
+                <img
+                  className="h-100 w-100"
+                  style={{ objectFit: "cover" }}
+                  src={logoImage}
+                  alt="کارلند"
+                />
               )}
             </div>
           )}

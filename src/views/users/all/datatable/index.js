@@ -3,6 +3,7 @@ import ActionButton from "../components/action_button";
 import { AiOutlineCopy } from "react-icons/all";
 import toast from "react-hot-toast";
 import moment from "jalali-moment";
+import { imageUrl } from "../../../../hooks/use_http";
 
 export const columns = [
   {
@@ -15,13 +16,59 @@ export const columns = [
     },
   },
   {
-    name: "نام و نام خانوادگی",
+    name: "پروفایل",
+    minWidth: "100px",
+    sortable: false,
+    selector: (row) => row.image_profile,
+    cell: (row) => {
+      if (row.image_profile) {
+        return (
+          <img
+            src={imageUrl + row.profile}
+            alt="پروفایل"
+            style={{ width: "50px", height: "50px", objectFit: "cover" }}
+          />
+        );
+      } else {
+        return "-";
+      }
+    },
+  },
+  {
+    name: "نام",
     minWidth: "170px",
     sortable: true,
-    selector: (row) => row.lastName,
+    selector: (row) => row.name,
     cell: (row) => {
-      if (row.firstName || row.lastName) {
-        return row.firstName + " " + row.lastName;
+      if (row.name) {
+        return row.name;
+      } else {
+        return "-----";
+      }
+    },
+  },
+
+  {
+    name: "نام کاربری",
+    minWidth: "170px",
+    sortable: true,
+    selector: (row) => row.username,
+    cell: (row) => {
+      if (row.username) {
+        return row.username;
+      } else {
+        return "-----";
+      }
+    },
+  },
+  {
+    name: "شهر",
+    minWidth: "170px",
+    sortable: true,
+    selector: (row) => row.city,
+    cell: (row) => {
+      if (row.city) {
+        return row.city;
       } else {
         return "-----";
       }
@@ -33,18 +80,18 @@ export const columns = [
     sortable: true,
     selector: (row) => row.phoneNumber,
     cell: (row) => {
-      if (row.phoneNumber) {
+      if (row.phone) {
         return (
           <div className="d-flex align-items-center">
-            {formatHelper.toPersianString(row.phoneNumber)}
+            {formatHelper.toPersianString(row.phone)}
             <span
               style={{
                 marginRight: 8,
                 cursor: "pointer",
               }}
               onClick={() => {
-                if (row?.phoneNumber) {
-                  navigator.clipboard.writeText(row.phoneNumber);
+                if (row?.phone) {
+                  navigator.clipboard.writeText(row.phone);
                   toast.success("شماره موبایل با موفقیت کپی شد");
                 }
               }}
@@ -62,20 +109,20 @@ export const columns = [
     name: "کد ملی",
     minWidth: "130px",
     sortable: true,
-    selector: (row) => row.nationalCode,
+    selector: (row) => row.NationalCode,
     cell: (row) => {
-      if (row.nationalCode) {
+      if (row.NationalCode) {
         return (
           <div className="d-flex align-items-center">
-            {formatHelper.toPersianString(row.nationalCode)}
+            {formatHelper.toPersianString(row.NationalCode)}
             <span
               style={{
                 marginRight: 8,
                 cursor: "pointer",
               }}
               onClick={() => {
-                if (row?.nationalCode) {
-                  navigator.clipboard.writeText(row.nationalCode);
+                if (row?.NationalCode) {
+                  navigator.clipboard.writeText(row.NationalCode);
                   toast.success("کد ملی با موفقیت کپی شد");
                 }
               }}
@@ -90,65 +137,13 @@ export const columns = [
     },
   },
   {
-    name: "تاریخ تولد",
+    name: "موجودی",
     minWidth: "110px",
     sortable: true,
-    selector: (row) => row.birthDate,
+    selector: (row) => row.cash,
     cell: (row) => {
-      if (row.birthDate) {
-        return formatHelper.toPersianString(row.birthDate);
-      } else {
-        return "-----";
-      }
-    },
-  },
-  {
-    name: "نام پدر",
-    minWidth: "100px",
-    sortable: true,
-    selector: (row) => row.fatherName,
-    cell: (row) => {
-      if (row.fatherName) {
-        return row.fatherName;
-      } else {
-        return "-----";
-      }
-    },
-  },
-  {
-    name: "جنسیت",
-    minWidth: "90px",
-    sortable: true,
-    selector: (row) => row.gender,
-    cell: (row) => {
-      if (row.gender) {
-        return row.gender;
-      } else {
-        return "-----";
-      }
-    },
-  },
-  {
-    name: "ملیت",
-    minWidth: "100px",
-    sortable: true,
-    selector: (row) => row.nationality.nationalityName,
-    cell: (row) => {
-      if (row?.nationality?.nationalityName) {
-        return row.nationality.nationalityName;
-      } else {
-        return "-----";
-      }
-    },
-  },
-  {
-    name: "نقش",
-    minWidth: "150px",
-    sortable: true,
-    selector: (row) => row.role.name,
-    cell: (row) => {
-      if (row?.role?.name) {
-        return row?.role?.name;
+      if (row.cash) {
+        return formatHelper.toPersianString(row.cash);
       } else {
         return "-----";
       }
@@ -158,14 +153,20 @@ export const columns = [
     name: "تاریخ ایجاد",
     minWidth: "150px",
     sortable: true,
-    selector: (row) => row.createDate,
+    selector: (row) => row.created_at,
     cell: (row) => {
-      if (row.createDate) {
+      if (row.created_at) {
         return (
           <span style={{ direction: "ltr" }}>
-            {formatHelper.toPersianString(
-              moment(row.createDate).locale("fa").format("YYYY/MM/DD HH:mm:ss")
-            )}
+            {
+              formatHelper
+                .toPersianString(
+                  moment(row.created_at)
+                    .locale("fa")
+                    .format("YYYY/MM/DD HH:mm:ss")
+                )
+                .split(" ")[0]
+            }
           </span>
         );
       } else {
@@ -174,13 +175,13 @@ export const columns = [
     },
   },
   {
-    name: "کاربر ایجاد کننده",
-    minWidth: "130px",
+    name: "جنسیت",
+    minWidth: "90px",
     sortable: true,
-    selector: (row) => row.userName,
+    selector: (row) => row.Gender,
     cell: (row) => {
-      if (row.userName) {
-        return row.userName;
+      if (row.Gender) {
+        return row.Gender;
       } else {
         return "-----";
       }
@@ -190,29 +191,19 @@ export const columns = [
     name: "تاریخ آخرین ویرایش",
     minWidth: "155px",
     sortable: true,
-    selector: (row) => row.updateDate,
+    selector: (row) => row.updated_at,
     cell: (row) => {
-      if (row.updateDate) {
+      if (row.updated_at) {
         return (
           <span style={{ direction: "ltr" }}>
             {formatHelper.toPersianString(
-              moment(row.updateDate).locale("fa").format("YYYY/MM/DD HH:mm:ss")
+              moment(row.updated_at)
+                .locale("fa")
+                .format("YYYY/MM/DD HH:mm:ss")
+                .split(" ")[0]
             )}
           </span>
         );
-      } else {
-        return "-----";
-      }
-    },
-  },
-  {
-    name: "کاربر ویرایش کننده",
-    minWidth: "150px",
-    sortable: true,
-    selector: (row) => row.userNameUpdate,
-    cell: (row) => {
-      if (row.userNameUpdate) {
-        return row.userNameUpdate;
       } else {
         return "-----";
       }

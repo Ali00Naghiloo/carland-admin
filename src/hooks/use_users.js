@@ -191,7 +191,7 @@ const useUsers = () => {
       });
       setLoadings({ ...loadings, getUsers: false });
       if (response.data.data) {
-        response.data.data.map((dataItem, index) => {
+        response.data.data.data.map((dataItem, index) => {
           dataArray.push({ ...dataItem, index: index + 1 });
         });
         dispatch(setUsersList(dataArray));

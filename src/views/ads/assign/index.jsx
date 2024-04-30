@@ -19,7 +19,7 @@ import { selectThemeColors } from "@utils";
 import CustomButton from "../../../components/button";
 import useOffer from "../../../hooks/use_offer";
 
-const AssignOffer = () => {
+const AssignAd = () => {
   const {
     getSelectOffers,
     getSelectProduct,
@@ -185,4 +185,4 @@ const AssignOffer = () => {
     </Fragment>
   );
 };
-export default AssignOffer;
+export default AssignAd;
