@@ -54,7 +54,7 @@ const CreateUser = () => {
 
   useEffect(() => {
     getRoles();
-    getNationalities();
+    // getNationalities();
   }, []);
 
   useEffect(() => {

@@ -136,7 +136,7 @@ const AllUsers = () => {
 
   useEffect(() => {
     getUsers(currentPage, perPage, "without_filter");
-    getNationalities();
+    // getNationalities();
     getRoles();
   }, []);
 

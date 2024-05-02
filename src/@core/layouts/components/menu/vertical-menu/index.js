@@ -8,16 +8,20 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 // ** Vertical Menu Components
 import VerticalMenuHeader from "./VerticalMenuHeader";
 import VerticalNavMenuItems from "./VerticalNavMenuItems";
+import useHttp from "../../../../../hooks/use_http";
 
 const Sidebar = (props) => {
   // ** Props
   const { menuCollapsed, menu, skin, menuData } = props;
+
+  const { httpService } = useHttp();
 
   // ** States
   const [groupOpen, setGroupOpen] = useState([]);
   const [groupActive, setGroupActive] = useState([]);
   const [currentActiveGroup, setCurrentActiveGroup] = useState([]);
   const [activeItem, setActiveItem] = useState(null);
+  const [userPremissions, , setUserPremissions] = useState(null);
 
   // ** Menu Hover State
   const [menuHover, setMenuHover] = useState(false);
@@ -43,9 +47,30 @@ const Sidebar = (props) => {
     }
   };
 
+  // check premisions
+  const handleUserPremission = () => {
+    httpService
+      .get("admin/user")
+      .then((res) => {
+        if (res.status === 200) {
+          setUserPremissions(res.data.level);
+        }
+      })
+      .then(() => {
+        console.log(userPremissions);
+      })
+      .catch(() => {
+        return null;
+      });
+  };
+
   useEffect(() => {
-    console.log(menuData);
-  }, [menuData]);
+    handleUserPremission();
+  }, []);
+
+  useEffect(() => {
+    console.log(userPremissions);
+  }, [userPremissions]);
 
   return (
     <Fragment>

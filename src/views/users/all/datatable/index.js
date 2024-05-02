@@ -17,16 +17,21 @@ export const columns = [
   },
   {
     name: "پروفایل",
-    minWidth: "100px",
+    minWidth: "60px",
     sortable: false,
     selector: (row) => row.image_profile,
     cell: (row) => {
       if (row.image_profile) {
         return (
           <img
-            src={imageUrl + row.profile}
+            src={imageUrl + row.image_profile}
             alt="پروفایل"
-            style={{ width: "50px", height: "50px", objectFit: "cover" }}
+            style={{
+              width: "30px",
+              height: "30px",
+              objectFit: "cover",
+              borderRadius: "50%",
+            }}
           />
         );
       } else {
@@ -47,7 +52,6 @@ export const columns = [
       }
     },
   },
-
   {
     name: "نام کاربری",
     minWidth: "170px",

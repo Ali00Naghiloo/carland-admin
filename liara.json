@@ -1,0 +1,8 @@
+{
+  "platform": "carland",
+  "app": "carland",
+  "port": 3000,
+  "node": {
+    "version": 16
+  }
+}

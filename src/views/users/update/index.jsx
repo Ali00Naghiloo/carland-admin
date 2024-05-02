@@ -127,7 +127,7 @@ const UpdateUser = () => {
     if (entity_id) {
       getUserById(entity_id);
       getUserAddress(entity_id);
-      getNationalities();
+      // getNationalities();
       getRoles();
       updateUserController.setFieldValue("id", entity_id);
     } else {
